@@ -1,33 +1,38 @@
+import time
+import random
 user_name = input('Введите свое имя-> ')
-
+time.sleep(0.5)
 print('Наше меню: ')
 print(' Фастфут: картошкафри, бургер, пицца.')
 print(' Напитки: кола, спрайт, фанта, яблочный сок, вишньовый сок, сок мултифрукт.')
 print(' Дисерты: морожено, тортик, йогурт.')
-
+time.sleep(0.5)
 order_user = input('введите свой заказ из меню -> ')
 
 if order_user not in ('картошкафри', 'бургер', 'пицца', 'кола', 'спрайт', 'фанта', 'яблочный сок', 'вишньовый сок',
 'сок мултифрукт', 'йогурт', 'тортик', 'морожено', 'Картошкафри', 'Бургер', 'Пицца', 'Кола', 'Спрайт', 'Фанта', 'Яблочный сок', 'Вишньовый сок',
 'Сок мултифрукт', 'Йогурт', 'Тортик', 'Морожено'):
         print('Error')
+time.sleep(0.5)
 print(order_user)          
-
-q1 = 111
+time.sleep(1)
+q1 = random.randint(50, 500)
+print(q1)
 q2 = input('вам хватает средств для оплаты(да или нет) -> ')
 
 if q2 not in ('Да', 'да', 'Нет', 'нет'):
         print('Error')
 else:
         if q2 == 'Да' or 'да':
-                print('спасибо за покупку заказ будет скоро у вас.')
-                f  = open('Order/order.txt', 'a')
-                fw = f.writed(order_user)
-                f.close()  
-        else:
-                а = input('Вы хотите изменить или отменить свой заказ')
+                time.sleep(0.5)
+                print('спасибо за покупку заказ будет скоро у вас.')  
+                with open('Order/order.txt', 'a') as f:
+                        f.write(order_user)
+                time.sleep(0.5)
+                а = input('Вы хотите изменить или отменить свой заказ -> ')
+                time.sleep(0.5)
                 print(order_user)
-                if а not in ('отменить', 'изменить'):
+                if а not in ('отменить', 'изменить', 'Отменить', 'Изменить'):
                         print('Error')
                 else:
                         if а ==  'Изменить' or 'изменить':
@@ -36,12 +41,11 @@ else:
                                 'сок мултифрукт', 'йогурт', 'тортик', 'морожено', 'Картошкафри', 'Бургер', 'Пицца', 'Кола', 'Спрайт', 'Фанта', 'Яблочный сок',
                                 'Вишньовый сок', 'Сок мултифрукт', 'Йогурт', 'Тортик', 'Морожено'):
                                         print('Error')
+                                        time.sleep(0.5)
                                 print(order_user)
-                                f  = open('Order/order.txt', 'a')
-                                fw = f.writed(order_user)
-                                f.close()        
+                                with open('Order/order.txt', 'a') as f:
+                                        f.write(order_user)     
                         else:
                                 print('Спасибо что посетили наш сайт')       
-                                f  = open('ТrashСan/del_order.txt', 'a')
-                                fw = f.write(order_user)
-                                f.close()                                 
+                                with open('Order/order.txt', 'a') as f:
+                                        f.write(order_user)                                
