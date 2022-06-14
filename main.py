@@ -1,66 +1,59 @@
 from constants import d
 q1 = 150
 
+menu = ('картошка фри', 'бургер', 'пицца', 'кола', 'спрайт', 'фанта', 'яблочный сок', 'вишньовый сок', 'сок мултифрукт', 'йогурт', 'тортик', 'морожено')
+
 user_name = input('Введите свое имя-> ')
 print('Наше меню:')
 print(d)
 while True:
         order_user = input('введите свой заказ из меню -> ')
-        if order_user not in ('картошка фри', 'бургер', 'пицца', 'кола', 'спрайт', 'фанта', 'яблочный сок', 'вишньовый сок', 'сок мултифрукт', 'йогурт', 'тортик', 'морожено', 'Картошка фри', 'Бургер', 'Пицца', 'Кола', 
-        'Спрайт', 'Фанта', 'Яблочный сок', 'Вишньовый сок','Сок мултифрукт', 'Йогурт', 'Тортик', 'Морожено'):
+        if order_user.lower() not in menu:
                 print('вы не правельно записали заказ. Можете ввести заного свой заказ')                
         else:
                 print(order_user)          
-                if order_user == 'картошка фри' or 'Картошка фри':
+                if order_user.lower() == 'картошка фри':
                         q1 += 45
-                elif order_user == 'бургер' or 'Бургер':
+                elif order_user.lower() == 'бургер':
                         q1 += 135
-                elif order_user == 'пицца' or 'Пицца':
+                elif order_user.lower() == 'пицца':
                         q1 += 95
-                elif order_user == 'кола' or 'Кола':
+                elif order_user.lower() == 'кола':
                         q1 += 29
-                elif order_user == 'спрайт' or 'Спрайт':
+                elif order_user.lower() in ('спрайт', 'фанта'):
                         q1 += 39       
-                elif order_user == 'фанта' or 'Фанта':
-                        q1 += 39
-                elif order_user == 'яблочный сок' or 'Яблочный сок':
+                elif order_user.lower() in ('яблочный сок', 'вишньовый сок', 'сок мултифрукт'):
                         q1 += 20
-                elif order_user == 'вишньовый сок' or 'Вишньовый сок':
-                        q1 += 20
-                elif order_user == 'сок мултифрукт' or 'Сок мултифрукт':
-                        q1 += 20
-                elif order_user == 'йогурт' or 'Йогурт':
+                elif order_user.lower() == 'йогурт':
                         q1 += 45
-                elif order_user == 'тортик' or 'Тортик':
+                elif order_user.lower() == 'тортик':
                         q1 += 55
-                elif order_user == 'морожено' or 'Морожено':
+                elif order_user.lower() == 'морожено':
                         q1 += 15
 
                 print('Вам нужно заплатить за заказ -> ',q1)
                 q2 = input('вам хватает средств для оплаты(да или нет) -> ')
 
-                if q2 in ('Да', 'да', 'Нет', 'нет'):
+                if q2.lower() not in ('да', 'нет'):
                         print('Вы должны ввести да или нет иначе у нас не выйдет доставить заказ')
-                        
-                if q2 in ('Да', 'да'):
+                else:
+                        if q2.lower() == 'да':
                                 print('спасибо за покупку заказ будет скоро у вас.')  
-                                with open('Order/order.txt', 'a') as f:
+                                with open('Order/order.txt', 'a', encoding='utf-8') as f:
                                         f.write(order_user)
                                 а = input('Вы хотите изменить или отменить свой заказ -> ')
                                 print(order_user)
-                                if а not in ('отменить', 'изменить', 'Отменить', 'Изменить'):
+                                if а.lower() not in ('отменить', 'изменить'):
                                         print('Error')
                                 else:
-                                        if а in ('Изменить', 'изменить'):
+                                        if а.lower() == 'изменить':
                                                 order_user = input('введите свой заказ из меню -> ')
-                                                if order_user not in ('картошкафри', 'бургер', 'пицца', 'кола', 'спрайт', 'фанта', 'яблочный сок', 'вишньовый сок',
-                                                'сок мултифрукт', 'йогурт', 'тортик', 'морожено', 'Картошкафри', 'Бургер', 'Пицца', 'Кола', 'Спрайт', 'Фанта', 'Яблочный сок', 'Вишньовый сок', 'Сок мултифрукт', 'Йогурт',
-                                                'Тортик', 'Морожено'):
+                                                if order_user not in menu:
                                                         print('Error')
                                                 print(order_user)
-                                                with open('Order/order.txt', 'a') as f:
+                                                with open('Order/order.txt', 'a', encoding='utf-8') as f:
                                                         f.write(order_user)     
                                         else:
                                                 print('Спасибо что посетили наш сайт')       
-                                                with open('Order/order.txt', 'a') as f:
-                                                        f.write(order_user)                                
+                                                with open('Order/order.txt', 'a', encoding='utf-8') as f:
+                                                        f.write(order_user)
