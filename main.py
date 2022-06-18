@@ -18,9 +18,7 @@ while True:
                         q1 += 135
                 elif order_user.lower() == 'пицца':
                         q1 += 95
-                elif order_user.lower() == 'кола':
-                        q1 += 29
-                elif order_user.lower() in ('спрайт', 'фанта'):
+                elif order_user.lower() in ('спрайт', 'фанта', 'кола'):
                         q1 += 39       
                 elif order_user.lower() in ('яблочный сок', 'вишньовый сок', 'сок мултифрукт'):
                         q1 += 20
