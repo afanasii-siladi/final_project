@@ -4,8 +4,10 @@ q1 = 150
 menu = ('картошка фри', 'бургер', 'пицца', 'кола', 'спрайт', 'фанта', 'яблочный сок', 'вишньовый сок', 'сок мултифрукт', 'йогурт', 'тортик', 'морожено')
 
 user_name = input('Введите свое имя-> ')
-print('Наше меню:')
-print(d)
+for product in d:
+        print('Наше меню:')
+        print(f'{product} - {d[product]}')
+
 while True:
         order_user = input('введите свой заказ из меню -> ')
         if order_user.lower() not in menu:

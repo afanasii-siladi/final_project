@@ -1,4 +1,4 @@
-d = {'product_name':'картошка фри', 'price':45},
+d = [{'product_name':'картошка фри', 'price':45},
 {'product_name':'бургер', 'price':135},
 {'product_name':'пицца', 'price':95},
 {'product_name':'кола', 'price':39},
@@ -9,4 +9,4 @@ d = {'product_name':'картошка фри', 'price':45},
 {'product_name':'сок мултифрукт', 'price':20},
 {'product_name':'йогурт', 'price':45},
 {'product_name':'тортик', 'price':45},
-{'product_name':'морожено', 'price':15}
+{'product_name':'морожено', 'price':15}] 
