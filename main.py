@@ -13,7 +13,7 @@ while True:
         if order_user.lower() not in menu:
                 print('вы не правельно записали заказ. Можете ввести заного свой заказ')                
         else:
-                print(order_user)          
+                print(order_user)   
                 if order_user.lower() == 'картошка фри':
                         q1 += 45
                 elif order_user.lower() == 'бургер':
@@ -30,7 +30,7 @@ while True:
                         q1 += 55
                 elif order_user.lower() == 'морожено':
                         q1 += 15
-
+                              
                 print('Вам нужно заплатить за заказ -> ',q1)
                 q2 = input('вам хватает средств для оплаты(да или нет) -> ')
 
