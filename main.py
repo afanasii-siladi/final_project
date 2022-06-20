@@ -11,7 +11,7 @@ for product in d:
 while True:
         order_user = input('Введите свой заказ из меню -> ')
         if order_user.lower() not in menu:
-                print('Вы не правельно записали заказ. Можете ввести заного свой заказ')                
+                print('Вы не правельно записали заказ. Можете ввести заного свой заказ', user_name )                
         else:
                 print(order_user.lower())   
                 q1 += [i['price'] for i in d if i['product_name'] == order_user.lower()][0]
@@ -23,7 +23,7 @@ while True:
                         print('Вы должны ввести да или нет иначе у нас не выйдет доставить заказ')
                 else:
                         if q2.lower() == 'да':
-                                print('Спасибо за покупку заказ будет скоро у вас.')  
+                                print('Спасибо за покупку заказ будет скоро у вас ', user_name, '.')  
                                 with open('Order/order.txt', 'a', encoding='utf-8') as f:
                                         f.write(order_user)
                                 а = input('Вы хотите изменить или отменить свой заказ -> ')
