@@ -1,7 +1,7 @@
 from constants import d
-delivery_cost = 150
+delivery_cost = 50
 
-menu = ('картошка фри', 'бургер', 'пицца', 'кола', 'спрайт', 'фанта', 'яблочный сок', 'вишньовый сок', 'сок мултифрукт', 'йогурт', 'тортик', 'морожено')
+menu = [d[product_name]['product_name'] for product_name in range(len(d))]
 
 user_name = input('Введите свое имя-> ')
 print('Наше меню:')
@@ -20,12 +20,13 @@ while True:
                 pay = input('Вам хватает средств для оплаты(да или нет) -> ')
 
                 if pay.lower() not in ('да', 'нет'):
-                        print('Вы должны ввести да или нет иначе у нас не выйдет доставить заказ')
+                        print('Вы должны ввести да или нет иначе у нас не выйдет доставить заказ', user_name,)
                 else:
                         if pay.lower() == 'да':
                                 print('Спасибо за покупку заказ будет скоро у вас ', user_name, '.')  
                                 with open('Order/order.txt', 'a', encoding='utf-8') as f:
                                         f.write(order_user)
+                                        break
                                 а = input('Вы хотите изменить или отменить свой заказ -> ')
                                 print(order_user)
                                 if а.lower() not in ('отменить', 'изменить'):
