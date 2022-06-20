@@ -1,5 +1,5 @@
 from constants import d
-q1 = 150
+delivery_cost = 150
 
 menu = ('картошка фри', 'бургер', 'пицца', 'кола', 'спрайт', 'фанта', 'яблочный сок', 'вишньовый сок', 'сок мултифрукт', 'йогурт', 'тортик', 'морожено')
 
@@ -14,22 +14,22 @@ while True:
                 print('Вы не правельно записали заказ. Можете ввести заного свой заказ', user_name )                
         else:
                 print(order_user.lower())   
-                q1 += [i['price'] for i in d if i['product_name'] == order_user.lower()][0]
+                delivery_cost += [product2['price'] for product2 in d if product2['product_name'] == order_user.lower()][0]
                               
-                print('Вам нужно заплатить за заказ -> ',q1)
-                q2 = input('Вам хватает средств для оплаты(да или нет) -> ')
+                print('Вам нужно заплатить за заказ -> ',delivery_cost)
+                pay = input('Вам хватает средств для оплаты(да или нет) -> ')
 
-                if q2.lower() not in ('да', 'нет'):
+                if pay.lower() not in ('да', 'нет'):
                         print('Вы должны ввести да или нет иначе у нас не выйдет доставить заказ')
                 else:
-                        if q2.lower() == 'да':
+                        if pay.lower() == 'да':
                                 print('Спасибо за покупку заказ будет скоро у вас ', user_name, '.')  
                                 with open('Order/order.txt', 'a', encoding='utf-8') as f:
                                         f.write(order_user)
                                 а = input('Вы хотите изменить или отменить свой заказ -> ')
                                 print(order_user)
                                 if а.lower() not in ('отменить', 'изменить'):
-                                        print('Error')
+                                        print('Такой ответ не возможен!')
                                 else:
                                         if а.lower() == 'изменить':
                                                 order_user = input('Введите свой заказ из меню -> ')
