@@ -1,11 +1,11 @@
-from constants import d
+from constants import dict
 delivery_cost = 50
 
-menu = [d[product_name]['product_name'] for product_name in range(len(d))]
+menu = [ product['product_name'] for product in dict]
 
 user_name = input('Введите свое имя-> ')
 print('Наше меню:')
-for product in d:
+for product in dict:
         print(f"{product['product_name']} - {product['price']}")
 
 while True:
@@ -14,7 +14,7 @@ while True:
                 print('Вы не правельно записали заказ. Можете ввести заного свой заказ', user_name )                
         else:
                 print(order_user.lower())   
-                delivery_cost += [product2['price'] for product2 in d if product2['product_name'] == order_user.lower()][0]
+                delivery_cost += [product2['price'] for product2 in dict if product2['product_name'] == order_user.lower()][0]
                               
                 print('Вам нужно заплатить за заказ -> ',delivery_cost)
                 pay = input('Вам хватает средств для оплаты(да или нет) -> ')

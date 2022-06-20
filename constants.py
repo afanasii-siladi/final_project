@@ -1,4 +1,4 @@
-d = [{'product_name':'картошка фри', 'price':45},
+dict = [{'product_name':'картошка фри', 'price':45},
 {'product_name':'бургер', 'price':135},
 {'product_name':'пицца', 'price':95},
 {'product_name':'кола', 'price':39},
