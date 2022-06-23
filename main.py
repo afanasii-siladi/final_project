@@ -22,24 +22,26 @@ while True:
                 if pay.lower() not in ('да', 'нет'):
                         print('Вы должны ввести да или нет иначе у нас не выйдет доставить заказ', user_name,)
                 else:
+                        def with_write_file():
+                                with open('Order/order.txt', 'a', encoding='utf-8') as f:
+                                        f.write(order_user) 
+
                         if pay.lower() == 'да':
                                 print('Спасибо за покупку заказ будет скоро у вас ', user_name, '.')  
-                                with open('Order/order.txt', 'a', encoding='utf-8') as f:
-                                        f.write(order_user)
-                                        break
+                                with_write_file()
+                                break
                                 а = input('Вы хотите изменить или отменить свой заказ -> ')
                                 print(order_user)
                                 if а.lower() not in ('отменить', 'изменить'):
                                         print('Такой ответ не возможен!')
                                 else:
+
                                         if а.lower() == 'изменить':
                                                 order_user = input('Введите свой заказ из меню -> ')
                                                 if order_user not in menu:
                                                         print('Error')
                                                 print(order_user)
-                                                with open('Order/order.txt', 'a', encoding='utf-8') as f:
-                                                        f.write(order_user)     
+                                                with_write_file()     
                                         else:
                                                 print('Спасибо что посетили наш сайт')       
-                                                with open('Order/order.txt', 'a', encoding='utf-8') as f:
-                                                        f.write(order_user)
+                                                with_write_file()

@@ -1,5 +1,6 @@
-'''if order_user.lower() == 'картошка фри':
-        q1 += 45
+'''  
+if order_user.lower() == 'картошка фри':
+#        q1 += 45
 elif order_user.lower() == 'бургер':
         q1 += 135
 elif order_user.lower() == 'пицца':
