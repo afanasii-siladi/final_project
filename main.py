@@ -15,13 +15,6 @@ delivery_cost = 0
 delivery = 50
 delivery_cost += delivery
 
-menu = [product['product_name'] for product in dict]
-
-
-user_name = input("Запишіть своє ім'я -> ")
-print('Наше меню:')
-for product in dict:
-    print(f"{product['product_name']} - {product['price']}")
 def check_menu():
     if order_user.lower() not in menu:
         print('Виправіть своє  замовлення, буд ласка. Можете записати по-новому своє замовлення')                
