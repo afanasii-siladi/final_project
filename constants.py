@@ -10,4 +10,3 @@ dict = [{'product_name':'картопля фрі', 'price':45},
 {'product_name':'йогурт', 'price':45},
 {'product_name':'тортик', 'price':45},
 {'product_name':'морозиво', 'price':15}] 
-                
