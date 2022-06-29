@@ -30,14 +30,15 @@ def print_final():
 
 
 def cart():
-    with open('order_user.txt', 'r', encoding='utf-8') as fr:
+    with open('order_user_cart.txt', 'r', encoding='utf-8') as fr:
         data = fr.read()
 
 
 def cancel_order():
     a = input('Вам потрібно відмінити замовлення, так чи ні? ')
     if a == 'так':
-        print('Замовлення скасовано.')           
+        print('Замовлення скасовано.') 
+        cart()          
     else:
         print('Дкую що використовували наш сайт.')
      
@@ -51,6 +52,7 @@ while True:
         print_final()
         not_add_oder = input('Якщо це весь сипос напишіть /готово, якщо потрібно продовжити замволення на друкуйте /далі -> ')
         if not_add_oder.lower() == 'готово':
+            print_final()
             print('Дякую за покупку, незабаром замовлення прибуде до вас.')  
             write_in_file()            
             break
