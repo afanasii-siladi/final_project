@@ -34,6 +34,14 @@ def cart():
         data = fr.read()
 
 
+def cancel_order():
+    a = input('Вам потрібно відмінити замовлення, так чи ні? ')
+    if a == 'так':
+        print('Замовлення скасовано.')           
+    else:
+        print('Дкую що використовували наш сайт.')
+     
+
 while True:
     order_user = input('запишіть замовлення з меню -> ')
     if order_user.lower() not in menu:
@@ -55,7 +63,6 @@ while True:
                             print(add_oder.lower())
                             delivery_cost += [product2['price'] for product2 in dict if product2['product_name'] == add_oder.lower()][0] + [product2['price'] for product2 in dict if product2['product_name'] == order_user.lower()][0]
                             print_final()
-                            cart()
-                            print('Дкую що використовували наш сайт.')
+                            cancel_order()
                             write_in_file_finish()            
                             break
