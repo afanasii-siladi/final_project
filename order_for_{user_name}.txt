@@ -1,0 +1,22 @@
+бургер;кола;
+pip install pyTelegramBotAPI
+import telebot
+
+token = '5329245219:AAFk9jZCoshDSu08SkACDgp2xC8m8_s7X1I'
+
+bot = telebot.TeleBot(token)
+
+
+@bot.message_handler(commands=['start'])
+def start_bot(message):
+    bot.send_message(message.chat.id, 'Bot started!')
+
+
+@bot.message_handler()
+def echo_bot(message):
+    bot.send_message(message.chat.id, message.text)
+
+
+# bot.polling(none_stop=True)
+bot.infinity_polling()
+https://pypi.org/project/pyTelegramBotAPI/
